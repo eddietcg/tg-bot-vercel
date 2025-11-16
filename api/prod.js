@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     console.log(`📨 收到訊息: [${chatId}] ${text.slice(0, 50)}`);
 
     // 監聽關鍵字 'xx'
-    if (text.includes("FARM")) {
+    if (text.includes("FARM") || text.includes("Prod WPS test")) {
       try {
         await sendMessage({
           text,
