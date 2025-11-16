@@ -1,5 +1,5 @@
 import axios from "axios";
-import { sendMessage } from "../lib/lark";
+import { sendMessage } from "../lib/lark.js";
 
 /**
  * 你的 Lark 轉發函數
