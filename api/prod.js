@@ -19,14 +19,11 @@ export default async function handler(req, res) {
     const text = message.text || "";
     const messageId = message.message_id;
     const chatId = message.chat?.id;
-    const timestamp = new Date().toISOString();
 
-    console.log(`[${timestamp}] 📨 收到訊息: [${chatId}] ${text.slice(0, 50)}`);
+    console.log(`📨 收到訊息: [${chatId}] ${text.slice(0, 50)}`);
 
     // 監聽關鍵字 'xx'
-    if (text.includes("xx")) {
-      console.log(`[${timestamp}] 🎯 觸發關鍵字 'xx'`);
-
+    if (text.includes("FARM")) {
       try {
         await sendMessage({
           text,
