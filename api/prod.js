@@ -1,20 +1,4 @@
-import axios from "axios";
 import { sendMessage } from "../lib/lark.js";
-
-/**
- * 你的 Lark 轉發函數
- * @param {Object} msgData
- */
-async function lark(msgData) {
-  console.log("🔔 Lark 轉發:", msgData);
-
-  // 實現你的 Lark 邏輯
-  // 例如：
-  // await axios.post('https://open.larksuite.com/open-apis/bot/v2/hook/xxx', {
-  //   msg_type: 'text',
-  //   content: { text: msgData.text }
-  // });
-}
 
 export default async function handler(req, res) {
   // 只接受 POST
@@ -44,7 +28,7 @@ export default async function handler(req, res) {
       console.log(`[${timestamp}] 🎯 觸發關鍵字 'xx'`);
 
       try {
-        await lark({
+        await sendMessage({
           text,
           messageId,
           chatId,
