@@ -29,7 +29,6 @@ export default async function handler(req, res) {
           text,
           messageId,
           chatId,
-          timestamp,
         });
       } catch (err) {
         console.error(`❌ Lark 轉發失敗: ${err.message}`);
