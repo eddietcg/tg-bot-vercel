@@ -20,10 +20,10 @@ export default async function handler(req, res) {
     const messageId = message.message_id;
     const chatId = message.chat?.id;
 
-    console.log(`📨 收到訊息: [${chatId}] ${text.slice(0, 50)}`);
+    console.log(`📨 收到訊息: [${chatId}] ${text}`);
 
     // 監聽關鍵字 'xx'
-    if (text.includes("FARM") || text.includes("Prod WPS test")) {
+    if (text.includes("FARM") || text.includes("Prod WPS test") || text.includes("SERVICE RESTART")) {
       try {
         await sendMessage({
           text,
