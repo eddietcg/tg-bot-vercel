@@ -22,17 +22,14 @@ export default async function handler(req, res) {
 
     console.log(`📨 收到訊息: [${chatId}] ${text}`);
 
-    // 監聽關鍵字 'xx'
-    if (text.includes("FARM") || text.includes("Prod WPS test") || text.includes("SERVICE RESTART")) {
-      try {
-        await sendMessage({
-          text,
-          messageId,
-          chatId,
-        });
-      } catch (err) {
-        console.error(`❌ Lark 轉發失敗: ${err.message}`);
-      }
+    try {
+      await sendMessage({
+        text,
+        messageId,
+        chatId,
+      });
+    } catch (err) {
+      console.error(`❌ Lark 轉發失敗: ${err.message}`);
     }
 
     return res.status(200).json({ ok: true });
