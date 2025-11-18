@@ -23,11 +23,12 @@ export default async function handler(req, res) {
     console.log(`📨 收到訊息: [${chatId}] ${text}`);
 
     try {
-      await sendMessage({
+      const result = await sendMessage({
         text,
         messageId,
         chatId,
       });
+      console.log(`✅ Lark 轉發成功: [${chatId}]`, result?.data);
     } catch (err) {
       console.error(`❌ Lark 轉發失敗: ${err.message}`);
     }
