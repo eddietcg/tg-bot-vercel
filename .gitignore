@@ -3,4 +3,4 @@ node_modules/**
 .vercel
 samples/**
 .idea/
-/.claude/settings.local.json
+.claude/settings.local.json
